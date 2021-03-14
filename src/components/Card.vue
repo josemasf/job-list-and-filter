@@ -3,16 +3,16 @@
   <v-card outlined class="job-info mb-5" v-for="job in jobInfo" :key="job.id">
   <v-list-item three-line >
     <v-list-item-avatar size="80">
-      <v-img src="~@/assets/photosnap.svg"></v-img>
+      <v-img :src="logoImage(job)"></v-img>
     </v-list-item-avatar>
     <v-list-item-content>
       <div class="overline ">
         {{job.company}}
         <v-chip
-          color="blue white--text" v-if="job.new"
+          color="blue white--text" v-show="job.new"
         >NEW !</v-chip>
         <v-chip
-          color="black white--text" v-if="job.featured"
+          color="black white--text" v-show="job.featured"
         >Featured</v-chip>
       </div>
       <v-list-item-title class="mb-1">
@@ -36,12 +36,18 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
     }
     })
 export default class Card extends Vue{
-@Prop() readonly jobInfo!: {
-      id: number;company: string;logo: string;new: boolean;featured: boolean;position: string;role: string;level: string;postedAt: string;contract: string;location: string;languages: string[];tools: string[];
-    }[]
+@Prop() readonly jobInfo!: Job[]
+
+    logoImage (jobInfo: Job) {      
+      const fileName = jobInfo.logo.toLowerCase()
+
+      return require(`../assets/${fileName}`) // the module request
+    }
 }
 
-
+interface Job{
+      id: number;company: string;logo: string;new: boolean;featured: boolean;position: string;role: string;level: string;postedAt: string;contract: string;location: string;languages: string[];tools: string[];
+    }
 </script>
 <style lang="scss" scoped>
 .job-info{

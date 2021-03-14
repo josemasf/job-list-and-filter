@@ -21,7 +21,7 @@ created() {
   this.items = [{
       "id": 1,
       "company": "Photosnap",
-      "logo": "~@/assets/photosnap.svg",
+      "logo": "photosnap.svg",
       "new": true,
       "featured": true,
       "position": "Senior Frontend Developer",
@@ -36,7 +36,7 @@ created() {
     {
       "id": 2,
       "company": "Manage",
-      "logo": "~@/assets/manage.svg",
+      "logo": "manage.svg",
       "new": true,
       "featured": true,
       "position": "Fullstack Developer",
@@ -51,7 +51,7 @@ created() {
     {
       "id": 3,
       "company": "Account",
-      "logo": "~@/assets/account.svg",
+      "logo": "account.svg",
       "new": true,
       "featured": false,
       "position": "Junior Frontend Developer",
@@ -66,7 +66,7 @@ created() {
     {
       "id": 4,
       "company": "MyHome",
-      "logo": "~@/assets/myhome.svg",
+      "logo": "myhome.svg",
       "new": false,
       "featured": false,
       "position": "Junior Frontend Developer",
@@ -81,7 +81,7 @@ created() {
     {
       "id": 5,
       "company": "Loop Studios",
-      "logo": "~@/assets/loop-studios.svg",
+      "logo": "loop-studios.svg",
       "new": false,
       "featured": false,
       "position": "Software Engineer",
@@ -96,7 +96,7 @@ created() {
     {
       "id": 6,
       "company": "FaceIt",
-      "logo": "~@/assets/faceit.svg",
+      "logo": "faceit.svg",
       "new": false,
       "featured": false,
       "position": "Junior Backend Developer",
@@ -111,7 +111,7 @@ created() {
     {
       "id": 7,
       "company": "Shortly",
-      "logo": "~@/assets/shortly.svg",
+      "logo": "shortly.svg",
       "new": false,
       "featured": false,
       "position": "Junior Developer",
@@ -126,7 +126,7 @@ created() {
     {
       "id": 8,
       "company": "Insure",
-      "logo": "~@/assets/insure.svg",
+      "logo": "insure.svg",
       "new": false,
       "featured": false,
       "position": "Junior Frontend Developer",
@@ -141,7 +141,7 @@ created() {
     {
       "id": 9,
       "company": "Eyecam Co.",
-      "logo": "~@/assets/eyecam-co.svg",
+      "logo": "eyecam-co.svg",
       "new": false,
       "featured": false,
       "position": "Full Stack Engineer",
@@ -156,7 +156,7 @@ created() {
     {
       "id": 10,
       "company": "The Air Filter Company",
-      "logo": "~@/assets/the-air-filter-company.svg",
+      "logo": "the-air-filter-company.svg",
       "new": false,
       "featured": false,
       "position": "Front-end Dev",
