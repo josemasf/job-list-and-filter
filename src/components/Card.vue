@@ -29,7 +29,7 @@
       </v-list-item-subtitle>
         </v-col>
         <v-col :cols=6>
-          <div >
+          <div class="mt-3 text-right">
             <v-chip class="primary--text font-weight-bold ma-2" color="filterbg"
       label
       v-for="item in labelInfo(job)" :key="item">
