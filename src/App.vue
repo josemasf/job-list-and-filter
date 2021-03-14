@@ -10,7 +10,7 @@
     </div>
     <v-main class="bg-body">
       <div id="content">
-        <cards-jobs v-on:filter-label="filterLabel" :items="items"></cards-jobs>
+        <cards-jobs v-on:filter-label="filterLabel" :items="itemsFiltered"></cards-jobs>
       </div>
     </v-main>
   </v-app>
@@ -196,25 +196,32 @@ created() {
 
   filterLabel(payload: string){
     if(!this.isInArray(payload)){
-    this.labelFilter.push(payload);
-
-    this.itemsFiltered = []
-    /*this.labelFilter.forEach(item => {
-      this.itemsFiltered.push(this.items.find( job ==> job.role === item)); 
-    })*/
+      this.labelFilter.push(payload);
+      this.updateItems()
     }
   }
   deleteFilter(index: number){
     this.labelFilter.splice(index, 1)
+    this.updateItems()
   }
   isInArray(newItem: string): boolean{
-    const finder = this.labelFilter.find(item => item ===newItem);    
-    console.log(finder)
+    const finder = this.labelFilter.find(item => item ===newItem);        
     if(finder !== undefined)
       return  true
     return false
   }
-  
+  updateItems(){
+    this.itemsFiltered = this.items
+    
+    this.labelFilter.forEach(item => {      
+      const jobsWithFilter =  this.itemsFiltered.filter(function(job) {
+        return job.role == item || job.level === item || job.tools.find(tool => tool === item) || job.languages.find(language => language === item);
+      });      
+      
+      if(jobsWithFilter.length>0)
+      this.itemsFiltered = jobsWithFilter;      
+    })
+  }
 }
 </script>
 

@@ -1,47 +1,54 @@
 <template>
-<div class=" ">
-  <v-card outlined class="job-info mb-5 pa-3" :class="job.featured ? 'featured-job': ''" v-for="job in jobInfo" :key="job.id">
-  <v-list-item three-line >
-    <v-list-item-avatar size="80">
-      <v-img :src="logoImage(job)"></v-img>
-    </v-list-item-avatar>
-    <v-list-item-content>
-      <v-row>
-        <v-col :cols=6>
-          <div class="primary--text job-company ">
-        {{job.company}}
-        <v-chip
-          x-small color="primary white--text ma-2 chip" v-show="job.new"
-        >NEW!</v-chip>
-        <v-chip
-          x-small color="black white--text text-uppercase chip" v-show="job.featured"
-        >Featured</v-chip>
-      </div>
-      <v-list-item-title class="mt-2 mb-1 job-position">
-        <router-link to="#">{{job.position}}</router-link>
-      </v-list-item-title>
-      <v-list-item-subtitle>
-        <ul class="extra-data">
-          <li>{{job.postedAt}}</li>
-          <li>{{job.contract}}</li>
-          <li>{{job.location}}</li>
-        </ul>         
-      </v-list-item-subtitle>
-        </v-col>
-        <v-col :cols=6>
-          <div class="mt-3 text-right">
-            <v-chip class="primary--text font-weight-bold ma-2" color="filterbg" @click="selectLabel(item)"
-      label
-      v-for="item in labelInfo(job)" :key="item">
-              {{item}}
-            </v-chip>
-          </div>
-        </v-col>
-      </v-row>      
-    </v-list-item-content>            
-  </v-list-item>            
-</v-card>
-</div>
+<div>
+  <div class="job-card" v-for="job in jobInfo"
+      :key="job.id">
+    <v-card outlined class="job-info ma-5 pa-3" :class="job.featured ? 'featured-job': ''" >
+      <v-list-item three-line>
+        <v-list-item-avatar size="80" :class="$vuetify.breakpoint.mobile ? 'avatar-mobile' : ''">
+          <v-img :src="logoImage(job)"></v-img>
+        </v-list-item-avatar>
+        <v-list-item-content>
+          <v-row>
+            <v-col :cols=12 :md=6 class="content-mobile">
+              <div class="primary--text job-company ">
+                {{job.company}}
+                <v-chip x-small color="primary white--text ma-2 chip" v-show="job.new">NEW!</v-chip>
+                <v-chip x-small color="black white--text text-uppercase chip" v-show="job.featured">Featured</v-chip>
+              </div>
+              <v-list-item-title class="mt-2 mb-1 job-position">
+                <router-link to="#">{{job.position}}</router-link>
+              </v-list-item-title>
+              <v-list-item-subtitle>
+                <ul class="extra-data">
+                  <li>{{job.postedAt}}</li>
+                  <li>{{job.contract}}</li>
+                  <li>{{job.location}}</li>
+                </ul>
+              </v-list-item-subtitle>
+            </v-col>
+            <v-col :cols=12 :md=6 v-show="!$vuetify.breakpoint.mobile">
+              <div class="mt-3" :class="!$vuetify.breakpoint.mobile ? 'text-right' : ''">
+                <v-chip class="primary--text font-weight-bold ma-2" color="filterbg" @click="selectLabel(item)" label
+                  v-for="item in labelInfo(job)" :key="item">
+                  {{item}}
+                </v-chip>
+              </div>
+            </v-col>
+          </v-row>
+        </v-list-item-content>
+      </v-list-item>
+      <v-col :cols=12 :md=6 v-show="$vuetify.breakpoint.mobile">
+        <v-divider></v-divider>
+        <div class="mt-3" :class="!$vuetify.breakpoint.mobile ? 'text-right' : ''">
+          <v-chip class="primary--text font-weight-bold ma-2" color="filterbg" @click="selectLabel(item)" label
+            v-for="item in labelInfo(job)" :key="item">
+            {{item}}
+          </v-chip>
+        </div>
+      </v-col>
+    </v-card>
+  </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -139,4 +146,24 @@ a:hover{
   color: #5BA4A4 !important;
   text-decoration: none;
 }
+
+.avatar-mobile{
+  float: right;
+  position: relative;
+  top: -70px;
+}
+
+@media (max-width: 600px) {
+  .content-mobile{
+      align-self: stretch;
+      position: absolute;
+      top: 15px;
+      left: 10px;            
+  }
+  .job-card{
+    height: 325px;
+  }
+ 
+}
+
 </style>
