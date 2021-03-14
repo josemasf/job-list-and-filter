@@ -1,19 +1,24 @@
 <template>
     <div id="jobs" class="job-info">
-      <card :jobInfo="items"></card>
+      <card :jobInfo="items" v-on:select-label="filterLabel"></card>
     </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import Component from 'vue-class-component'
+import { Component, Emit, Vue } from 'vue-property-decorator'
 import {Card} from '@/components'
+
 @Component({
     components:{
         Card
     }
     })
 export default class CardsJobs extends Vue{
+  @Emit()
+  filterLabel(payload: string){
+      console.log(payload)
+  }
+
     private items!: {
       id: number;company: string;logo: string;new: boolean;featured: boolean;position: string;role: string;level: string;postedAt: string;contract: string;location: string;languages: string[];tools: string[];
     } [];
@@ -169,6 +174,7 @@ created() {
       "tools": ["React", "Sass"]
     }
   ]
+  
 
 }
 

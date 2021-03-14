@@ -17,8 +17,8 @@
           x-small color="black white--text text-uppercase chip" v-show="job.featured"
         >Featured</v-chip>
       </div>
-      <v-list-item-title class="mb-1 job-position">
-        {{job.position}}
+      <v-list-item-title class="mt-2 mb-1 job-position">
+        <router-link to="#">{{job.position}}</router-link>
       </v-list-item-title>
       <v-list-item-subtitle>
         <ul class="extra-data">
@@ -30,7 +30,7 @@
         </v-col>
         <v-col :cols=6>
           <div class="mt-3 text-right">
-            <v-chip class="primary--text font-weight-bold ma-2" color="filterbg"
+            <v-chip class="primary--text font-weight-bold ma-2" color="filterbg" @click="selectLabel(item)"
       label
       v-for="item in labelInfo(job)" :key="item">
               {{item}}
@@ -46,7 +46,7 @@
 
 <script lang="ts">
 
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Emit, Prop, Vue } from 'vue-property-decorator'
 
 @Component({
     components:{        
@@ -54,6 +54,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
     })
 export default class Card extends Vue{
 @Prop() readonly jobInfo!: Job[]
+
+private selectedLabels: string[] = [];
 
     logoImage (jobInfo: Job) {      
       const fileName = jobInfo.logo.toLowerCase()
@@ -75,6 +77,12 @@ export default class Card extends Vue{
 
       return info;
     }
+
+    @Emit()
+    selectLabel(item: string){
+      this.selectedLabels.push(item);
+    }
+
 }
 
 interface Job{
@@ -121,5 +129,14 @@ interface Job{
 }
 .chip{
   padding-top: 2.5px;
+}
+
+a{
+  color: #000 !important;
+  text-decoration: none;
+}
+a:hover{
+  color: #5BA4A4 !important;
+  text-decoration: none;
 }
 </style>
