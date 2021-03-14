@@ -174,8 +174,6 @@ created() {
       "tools": ["React", "Sass"]
     }
   ]
-  
-
 }
 
 }
