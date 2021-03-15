@@ -1,37 +1,52 @@
-## Welcome to GitHub Pages
+# Frontend Mentor - Job listings with filtering solution
 
-You can use the [editor on GitHub](https://github.com/josemasf/job-list-and-filter/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This is a solution to the [Job listings with filtering challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Table of contents
 
-### Markdown
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)  
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-```markdown
-Syntax highlighted code block
+## Overview
 
-# Header 1
-## Header 2
-### Header 3
+### The challenge
 
-- Bulleted
-- List
+Users should be able to:
 
-1. Numbered
-2. List
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Filter job listings based on the categories
 
-**Bold** and _Italic_ and `Code` text
+### Screenshot
 
-[Link](url) and ![Image](src)
-```
+![screenshot](./screenshot.png)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Links
 
-### Jekyll Themes
+- Solution URL: [github/job-list-and-filter](https://github.com/josemasf/job-list-and-filter)
+- Live Site URL: [jobfilter.netlify.app](https://jobfilter.netlify.app)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/josemasf/job-list-and-filter/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+### Built with
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- Semantic HTML5 markup
+- CSS custom properties
+- SASS
+- Typescript
+- [Vue](https://reactjs.org/) - JS library
+- [Vuetify.js](https://vuetifyjs.org/) - UI framework
+
+
+## Author
+
+- Website - [JoseMa Santos](https://www.omeyasweb.com)
+- Frontend Mentor - [@josemasd](https://www.frontendmentor.io/profile/josemasf)
+- Twitter - [@josemasf](https://www.twitter.com/josemasf)
