@@ -13,7 +13,7 @@ import {Card} from '@/components'
         Card
     }
     })
-export default class CardsJobs extends Vue{
+export default class CardsJobs extends Vue{  
   private filterLabelEmited!: string
 
   @Emit()
@@ -21,7 +21,7 @@ export default class CardsJobs extends Vue{
     this.filterLabelEmited = payload
   }
 
-  @Prop() items: any
+  @Prop() items: string|undefined
 
 }
 </script>
