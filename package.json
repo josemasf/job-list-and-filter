@@ -7,10 +7,12 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "cypress": "^6.7.1",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
@@ -34,6 +36,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-typescript": "^5.0.2",
     "@vue/test-utils": "^1.0.3",
+    "auto-changelog": "^2.2.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "sass": "^1.32.0",
