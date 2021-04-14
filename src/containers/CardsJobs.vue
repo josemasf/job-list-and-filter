@@ -21,7 +21,7 @@ export default class CardsJobs extends Vue{
     this.filterLabelEmited = payload
   }
 
-  @Prop() items: string|undefined
+  @Prop() items: any
 
 }
 </script>
