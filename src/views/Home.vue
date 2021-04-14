@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <img alt="Logo Vue" src="../assets/logo.png">    
+    
   </div>
 </template>
 
