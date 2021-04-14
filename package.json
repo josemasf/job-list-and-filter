@@ -1,6 +1,6 @@
 {
   "name": "job-list-and-filter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -8,7 +8,7 @@
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "version": "auto-changelog -p && git add CHANGELOG.md"
+    "release": "standard-version"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -36,11 +36,11 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-typescript": "^5.0.2",
     "@vue/test-utils": "^1.0.3",
-    "auto-changelog": "^2.2.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "sass": "^1.32.0",
     "sass-loader": "^10.0.0",
+    "standard-version": "^9.2.0",
     "typescript": "~3.9.3",
     "vue-cli-plugin-vuetify": "~2.2.2",
     "vue-template-compiler": "^2.6.11",
