@@ -43,6 +43,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [JoseMa Santos](https://www.omeyasweb.com)
+- Website - [JoseMa Santos](https://josemariasantos.com/)
 - Frontend Mentor - [@josemasd](https://www.frontendmentor.io/profile/josemasf)
 - Twitter - [@josemasf](https://www.twitter.com/josemasf)
